@@ -54,7 +54,7 @@ namespace GitVersion.VersionCalculation.Cache
 
         public string GetCacheDirectory()
         {
-            var gitDir = options.Value.DotGitDirectory;
+            var gitDir = options.Value.ProjectRootDirectory;
             return Path.Combine(gitDir, "gitversion_cache");
         }
 

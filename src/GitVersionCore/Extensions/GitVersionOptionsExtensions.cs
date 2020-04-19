@@ -34,8 +34,7 @@ namespace GitVersion.Extensions
             if (string.IsNullOrEmpty(dotGitDirectory))
                 throw new DirectoryNotFoundException($"Can't find the .git directory in {dotGitDirectory}");
 
-            using var repository = new Repository(dotGitDirectory);
-            return repository.Info.WorkingDirectory;
+            return dotGitDirectory;
         }
 
         public static string GetDynamicGitRepositoryPath(this GitVersionOptions gitVersionOptions)

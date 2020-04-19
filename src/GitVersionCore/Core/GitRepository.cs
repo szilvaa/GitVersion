@@ -12,7 +12,7 @@ namespace GitVersion
 
         public GitRepository(IOptions<GitVersionOptions> options)
         {
-            repositoryLazy = new Lazy<IRepository>(() => new Repository(options.Value.DotGitDirectory));
+            repositoryLazy = new Lazy<IRepository>(() => new Repository(options.Value.ProjectRootDirectory));
         }
 
         public void Dispose()
